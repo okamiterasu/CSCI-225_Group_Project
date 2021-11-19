@@ -1,0 +1,36 @@
+body
+{
+    font-family: Arial, sans-serif;
+}
+main
+{
+    max-width: 1000px;
+}
+
+#games ul
+{
+    padding-left: 0px;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+#games h3
+{
+    text-align: center;
+}
+
+@media (prefers-color-scheme: dark)
+{
+    body
+    {
+        color: #f7f7f7;
+        background-color: #121212;
+    }
+    
+    a:link
+    {
+        color: #673ab7;
+    }
+}

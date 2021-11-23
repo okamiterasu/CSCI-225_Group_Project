@@ -21,6 +21,30 @@ main
     text-align: center;
 }
 
+.leaderboard
+{
+    position: relative;
+    height: 200px;
+}
+
+.leaderboard img
+{
+    position: absolute;
+    left: 33%;
+}
+
+.leaderboard table
+{
+    width: 100%;
+    visibility: hidden;
+    border-collapse: collapse;
+}
+
+table th, table td
+{    
+    border: 1px solid;
+}
+
 @media (prefers-color-scheme: dark)
 {
     body
@@ -32,5 +56,10 @@ main
     a:link
     {
         color: #673ab7;
+    }
+
+    table th, table td
+    {
+        border-color: #aaaaaa;
     }
 }

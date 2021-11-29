@@ -22,35 +22,41 @@ async function load_highscores()
 {
 	async function load_highscore(game)
 	{
-		const leaderboard = $("#"+game+" .leaderboard");
 		const game_collection = collection(db, game);
 		const game_snapshot = await getDocs(game_collection);
 		const game_scores = game_snapshot.docs.map( doc => doc.data());
-		// Sort by scores descending. This could probably be part of the query somehow.
-		game_scores.sort((a, b) => {a.score - b.score});
-		const tbody = $("<tbody>");
-			for (let i=0; i < 5; i++)
-			{
-				if (i >= game_scores.length)
-				{
-					break;
-				}
-				const score = game_scores[i];
-				const tr = $("<tr>");
-				tr.append("<td>"+score["name"]+"</td>");
-				tr.append("<td>"+score["score"]+"</td>");
-				tbody.append(tr);
-			}
-		const img = leaderboard.find("img");
-		img.remove();
-		const table = leaderboard.find("table");
-		table.append(tbody)
-		table.css("visibility", "unset");
+		return [game, game_scores]
 	}
+
+	const highscore_promises = [];
 	for (const game of ["game1", "game2"])
 	{
-		await load_highscore(game);
+		highscore_promises.push(load_highscore(game));
 	}
+
+	const all_highscores = await Promise.all(highscore_promises);
+	for (const [game, highscores] of all_highscores)
+	{
+		const leaderboard = $("#"+game+" .leaderboard");
+		highscores.sort((a, b) => {a.score - b.score});
+		const tbody = $("<tbody>");
+		leaderboard.find("table").append(tbody);
+		for (let i=0; i < 5; i++)
+		{
+			if (i >= highscores.length)
+			{
+				// Exit early if there aren't enough scores to fill the table
+				break;
+			}
+			const score = highscores[i];
+			const tr = $("<tr>");
+			tr.append("<td>"+score["name"]+"</td>");
+			tr.append("<td>"+score["score"]+"</td>");
+			tbody.append(tr);
+		}
+		leaderboard.removeClass("loading")
+	}
+	
 }
 
 $(load_highscores)

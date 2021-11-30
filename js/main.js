@@ -18,7 +18,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-async function load_highscores()
+const GAMES = ["game1", "game2"];
+
+function load_highscores()
 {
 	async function load_highscore(game)
 	{
@@ -28,14 +30,7 @@ async function load_highscores()
 		return [game, game_scores]
 	}
 
-	const highscore_promises = [];
-	for (const game of ["game1", "game2"])
-	{
-		highscore_promises.push(load_highscore(game));
-	}
-
-	const all_highscores = await Promise.all(highscore_promises);
-	for (const [game, highscores] of all_highscores)
+	function write_scoreboard(game, highscores)
 	{
 		const leaderboard = $("#"+game+" .leaderboard");
 		highscores.sort((a, b) => {a.score - b.score});
@@ -56,7 +51,15 @@ async function load_highscores()
 		}
 		leaderboard.removeClass("loading")
 	}
-	
+
+	Promise
+	.all(GAMES.map(load_highscore))
+	.then((everything)=>{
+		everything.forEach(([game, scores])=>{
+			write_scoreboard(game, scores);
+		})
+	});
+
 }
 
 $(load_highscores)

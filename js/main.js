@@ -18,7 +18,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+// Create highscore tables
 const GAMES = ["game1", "game2"];
+const MAX_HIGHSCORES = 5;
 
 function load_highscores()
 {
@@ -36,7 +38,7 @@ function load_highscores()
 		highscores.sort((a, b) => {a.score - b.score});
 		const tbody = $("<tbody>");
 		leaderboard.find("table").append(tbody);
-		for (let i=0; i < 5; i++)
+		for (let i=0; i < MAX_HIGHSCORES; i++)
 		{
 			if (i >= highscores.length)
 			{

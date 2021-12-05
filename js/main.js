@@ -28,7 +28,7 @@ function load_highscores()
 	{
 		const game_collection = collection(db, game);
 		const game_snapshot = await getDocs(game_collection);
-		const game_scores = game_snapshot.docs.map( doc => doc.data());
+		const game_scores = game_snapshot.docs.map(doc => doc.data());
 		return [game, game_scores]
 	}
 

@@ -1,91 +1,91 @@
 :root
 {
-    --g50: #F7F7F7;
-    --g100: #E1E1E1;
-    --g200: #CFCFCF;
-    --g300: #B1B1B1;
-    --g400: #9E9E9E;
-    --g500: #7E7E7E;
-    --g600: #626262;
-    --g700: #515151;
-    --g800: #3B3B3B;
-    --g900: #222222;
-    --black: #121212;
-    --purple: #673ab7;
+	--g50: #F7F7F7;
+	--g100: #E1E1E1;
+	--g200: #CFCFCF;
+	--g300: #B1B1B1;
+	--g400: #9E9E9E;
+	--g500: #7E7E7E;
+	--g600: #626262;
+	--g700: #515151;
+	--g800: #3B3B3B;
+	--g900: #222222;
+	--black: #121212;
+	--purple: #673ab7;
 }
 
 body
 {
-    font-family: Arial, sans-serif;
+	font-family: Arial, sans-serif;
 }
 
 main
 {
-    max-width: 1000px;
+	max-width: 1000px;
 }
 
 #games ul
 {
-    padding-left: 0px;
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+	padding-left: 0px;
+	list-style: none;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
 }
 
 #games h3
 {
-    text-align: center;
+	text-align: center;
 }
 
 .leaderboard
 {
-    height: 200px;
+	height: 200px;
 }
 
 .leaderboard img
 {
-    display: none;
+	display: none;
 }
 
 .leaderboard table
 {
-    width: 100%;
-    border-collapse: collapse;
+	width: 100%;
+	border-collapse: collapse;
 }
 
 .loading table
 {
-    display: none;
+	display: none;
 }
 
 .loading img
 {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 table th, table td
 {
-    border: 1px solid;
+	border: 1px solid;
 }
 
 @media (prefers-color-scheme: dark)
 {
-    body
-    {
-        color: var(--g50);
-        background-color: var(--black);
-    }
-    
-    a:link
-    {
-        color: var(--purple);
-    }
+	body
+	{
+		color: var(--g50);
+		background-color: var(--black);
+	}
+	
+	a:link
+	{
+		color: var(--purple);
+	}
 
-    table th, table td
-    {
-        border-color: var(--g500);
-    }
+	table th, table td
+	{
+		border-color: var(--g500);
+	}
 }

@@ -56,7 +56,7 @@ function load_highscores()
 	function write_scoreboard(game, highscores)
 	{
 		const leaderboard = $("#"+game+" .leaderboard");
-		highscores.sort((a, b) => {a.score - b.score});
+		highscores.sort((a, b) => {return b.score - a.score});
 		const tbody = $("<tbody>");
 		leaderboard.find("table").append(tbody);
 		for (let i=0; i < MAX_HIGHSCORES; i++)

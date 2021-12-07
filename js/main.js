@@ -18,6 +18,27 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+// Setup rule popups
+const overlay = $("#rule-overlay");
+const rule_box = $("#rule-box");
+function display_rules(url)
+{
+	rule_box.load(url);
+	if (url.slice(-3) === "txt")
+	{
+		rule_box.addClass("rawtext");
+	}
+	else
+	{
+		rule_box.removeClass("rawtext");
+	}
+	overlay.removeClass("hidden");
+}
+overlay.children("button").click(()=>{overlay.addClass("hidden")})
+$("#bj-rules").click(()=>{display_rules("./blackjack/rules.html")})
+$("#rpg-rules").click(()=>{display_rules("./rpg/readme/daRules.txt")})
+
+
 // Create highscore tables
 const GAMES = ["blackjack", "rpg"];
 const MAX_HIGHSCORES = 5;

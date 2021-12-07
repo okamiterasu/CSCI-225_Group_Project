@@ -71,6 +71,51 @@ table th, table td
 	border: 1px solid;
 }
 
+#rule-overlay.hidden
+{
+	display: none;
+}
+
+#rule-overlay
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: grid;
+	grid-template-columns: 1fr 10ex;
+	grid-template-rows: auto 1fr;
+	background: var(--g900);
+	opacity: 95%;
+}
+
+#rule-overlay button
+{
+	grid-row: 1;
+	grid-column: 2;
+	font-size: larger;
+}
+
+#rule-box
+{
+	grid-row: 2;
+	grid-column: 1;
+	margin: 5ex;
+	margin-top: 0px;
+	margin-right: 0px;
+	padding: 2ex;
+	/* border-radius: 5ex; */
+	background: var(--black);
+
+	overflow-y: scroll;
+}
+
+#rule-box.rawtext
+{
+	white-space: pre;
+}
+
 @media (prefers-color-scheme: dark)
 {
 	body

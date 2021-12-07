@@ -40,7 +40,7 @@ $("#rpg-rules").click(()=>{display_rules("./rpg/readme/daRules.txt")})
 
 
 // Create highscore tables
-const GAMES = ["blackjack", "rpgScore"];
+const GAMES = ["rpgScore"];
 const MAX_HIGHSCORES = 5;
 
 function load_highscores()
@@ -68,7 +68,6 @@ function load_highscores()
 			}
 			const score = highscores[i];
 			const tr = $("<tr>");
-			tr.append("<td>"+score["name"]+"</td>");
 			tr.append("<td>"+score["score"]+"</td>");
 			tbody.append(tr);
 		}

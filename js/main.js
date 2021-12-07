@@ -19,7 +19,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // Create highscore tables
-const GAMES = ["blackjack", "game2"];
+const GAMES = ["blackjack", "rpg"];
 const MAX_HIGHSCORES = 5;
 
 function load_highscores()

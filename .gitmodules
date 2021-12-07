@@ -1,3 +1,6 @@
 [submodule "blackjack"]
 	path = blackjack
 	url = https://github.com/Jared225/Final-Project
+[submodule "rpg"]
+	path = rpg
+	url = https://github.com/josephjohnson42/fp_arpg

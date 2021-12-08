@@ -128,6 +128,12 @@ table td
 	margin-bottom: 1em;
 }
 
+footer
+{
+	display: flex;
+	justify-content: right;
+}
+
 @media (prefers-color-scheme: dark)
 {
 	body
@@ -155,4 +161,56 @@ table td
 	{
 		background: var(--black);
 	}
+}
+
+.dark
+{
+	color: var(--g50);
+	background-color: var(--black);
+}
+
+.dark a:link
+{
+	color: var(--purple);
+}
+
+.dark table th, .dark table td
+{
+	border-color: var(--g500);
+}
+
+.dark #rules-overlay
+{
+	background: var(--g900);
+}
+
+.dark #rule-box
+{
+	background: var(--black);
+}
+
+.light
+{
+	color: unset;
+	background-color: unset;
+}
+
+.light a:link
+{
+	color: unset;
+}
+
+.light table th, .light table td
+{
+	border-color: unset;
+}
+
+.light #rules-overlay
+{
+	background: unset;
+}
+
+.light #rule-box
+{
+	background: unset;
 }

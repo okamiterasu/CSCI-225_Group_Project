@@ -38,6 +38,31 @@ overlay.children("button").click(()=>{overlay.addClass("hidden")})
 $("#bj-rules").click(()=>{display_rules("./blackjack/rules.html")})
 $("#rpg-rules").click(()=>{display_rules("./rpg/readme/daRules.txt")})
 
+// Setup style selector
+const body = $("body");
+const theme = $("#theme");
+theme.change(()=>
+{
+	switch (theme.val())
+	{
+		case "default":
+			body.removeClass("light");
+			body.removeClass("dark");
+			break;
+		case "light":
+			body.removeClass("dark");
+			body.addClass("light");
+			break;
+		case "dark":
+			body.removeClass("light");
+			body.addClass("dark");
+			break;
+		default:
+			body.removeClass("dark");
+			body.removeClass("light");
+			break;
+	}
+});
 
 // Create highscore tables
 const GAMES = ["rpgScore"];

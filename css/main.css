@@ -94,8 +94,7 @@ table td
 	display: grid;
 	grid-template-columns: 1fr 10ex;
 	grid-template-rows: auto 1fr;
-	background: var(--g900);
-	opacity: 95%;
+	background: var(--g100);
 }
 
 #rule-overlay button
@@ -114,7 +113,7 @@ table td
 	margin-right: 0px;
 	padding: 2ex;
 	/* border-radius: 5ex; */
-	background: var(--black);
+	background: var(--g50);
 
 	overflow-y: scroll;
 }
@@ -145,5 +144,15 @@ table td
 	table th, table td
 	{
 		border-color: var(--g500);
+	}
+
+	#rules-overlay
+	{
+		background: var(--g900);
+	}
+
+	#rule-box
+	{
+		background: var(--black);
 	}
 }

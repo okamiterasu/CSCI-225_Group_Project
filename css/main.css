@@ -41,6 +41,9 @@ main
 .leaderboard
 {
 	height: 200px;
+	width: 50%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .leaderboard img
@@ -66,7 +69,12 @@ main
 	margin-right: auto;
 }
 
-table th, table td
+table th
+{
+	border: 2px solid;
+}
+
+table td
 {
 	border: 1px solid;
 }
@@ -114,6 +122,11 @@ table th, table td
 #rule-box.rawtext
 {
 	white-space: pre;
+}
+
+#members li
+{
+	margin-bottom: 1em;
 }
 
 @media (prefers-color-scheme: dark)
